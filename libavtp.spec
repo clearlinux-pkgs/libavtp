@@ -4,12 +4,13 @@
 #
 Name     : libavtp
 Version  : 25f1bc1ed4e3f629fe044b89fde3a4fb278f6eb7
-Release  : 1
+Release  : 2
 URL      : https://github.com/AVnu/libavtp/archive/25f1bc1ed4e3f629fe044b89fde3a4fb278f6eb7.tar.gz
 Source0  : https://github.com/AVnu/libavtp/archive/25f1bc1ed4e3f629fe044b89fde3a4fb278f6eb7.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
+Requires: libavtp-lib = %{version}-%{release}
 Requires: libavtp-license = %{version}-%{release}
 BuildRequires : buildreq-meson
 BuildRequires : pkgconfig(cmocka)
@@ -20,10 +21,20 @@ BuildRequires : pkgconfig(cmocka)
 %package dev
 Summary: dev components for the libavtp package.
 Group: Development
+Requires: libavtp-lib = %{version}-%{release}
 Provides: libavtp-devel = %{version}-%{release}
 
 %description dev
 dev components for the libavtp package.
+
+
+%package lib
+Summary: lib components for the libavtp package.
+Group: Libraries
+Requires: libavtp-license = %{version}-%{release}
+
+%description lib
+lib components for the libavtp package.
 
 
 %package license
@@ -42,7 +53,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1540936377
+export SOURCE_DATE_EPOCH=1548793990
 CFLAGS="$CFLAGS" CXXFLAGS="$CXXFLAGS" LDFLAGS="$LDFLAGS" meson --prefix /usr --buildtype=plain   builddir
 ninja -v -C builddir
 
@@ -57,8 +68,11 @@ DESTDIR=%{buildroot} ninja -C builddir install
 %files dev
 %defattr(-,root,root,-)
 /usr/include/*.h
-/usr/lib64/libavtp.so
 /usr/lib64/pkgconfig/avtp.pc
+
+%files lib
+%defattr(-,root,root,-)
+/usr/lib64/libavtp.so
 
 %files license
 %defattr(0644,root,root,0755)
