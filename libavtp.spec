@@ -4,7 +4,7 @@
 #
 Name     : libavtp
 Version  : 25f1bc1ed4e3f629fe044b89fde3a4fb278f6eb7
-Release  : 2
+Release  : 3
 URL      : https://github.com/AVnu/libavtp/archive/25f1bc1ed4e3f629fe044b89fde3a4fb278f6eb7.tar.gz
 Source0  : https://github.com/AVnu/libavtp/archive/25f1bc1ed4e3f629fe044b89fde3a4fb278f6eb7.tar.gz
 Summary  : No detailed summary available
