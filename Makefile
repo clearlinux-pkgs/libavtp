@@ -1,5 +1,5 @@
 PKG_NAME := libavtp
-URL = https://github.com/AVnu/libavtp/archive/25f1bc1ed4e3f629fe044b89fde3a4fb278f6eb7.tar.gz
+URL = https://github.com/Avnu/libavtp/archive/v0.1.0/libavtp-0.1.0.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
