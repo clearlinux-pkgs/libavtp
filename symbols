@@ -12,3 +12,6 @@ libavtp.so.0:avtp_ieciidc_pdu_init
 libavtp.so.0:avtp_ieciidc_pdu_set
 libavtp.so.0:avtp_pdu_get
 libavtp.so.0:avtp_pdu_set
+libavtp.so.0:avtp_rvf_pdu_get
+libavtp.so.0:avtp_rvf_pdu_init
+libavtp.so.0:avtp_rvf_pdu_set
